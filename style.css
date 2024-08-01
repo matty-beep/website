@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   background-color: black;
 }
 
@@ -20,12 +20,13 @@ html, body {
   height: auto;
 }
 
-.bottom-left {
+.center-content {
   position: absolute;
-  bottom: 40px;
-  left: 40px;
-  width: auto;
-  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-bottom: 120px;
 }
 
 .bottom-right {
@@ -36,19 +37,26 @@ html, body {
   height: auto;
 }
 
-.blur-in {
-  animation: blurAnimation 0.8s ease-out forwards;
+.top-left {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: auto;
+  height: auto;
 }
 
-@keyframes blurAnimation {
-  0% {
-      filter: blur(10px);
-      opacity: 0;
-  }
-  100% {
-      filter: blur(0);
-      opacity: 1;
-  }
+.code-block {
+  position: absolute;
+  top: calc(50% + 160px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #292929;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  overflow: auto;
+  
 }
 
 h1 {
@@ -64,7 +72,7 @@ p {
 }
 
 button {
-  background-color: #ededed; 
+  background-color: #ededed;
   color: black;
   border-radius: 40px;
   border: none;
@@ -72,7 +80,7 @@ button {
 }
 
 button:hover {
-  background-color: #e6e6e6; 
+  background-color: #e6e6e6;
   cursor: pointer;
 }
 
@@ -86,4 +94,20 @@ button:hover {
 
 .styled-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.block {
+  background-color: #292929;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
 }
